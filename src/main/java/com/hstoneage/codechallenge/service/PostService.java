@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Optional;
 import java.util.Set;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hstoneage.codechallenge.entity.Author;
@@ -18,12 +19,20 @@ import com.hstoneage.codechallenge.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
 
 @Service
-@RequiredArgsConstructor
 public class PostService {
 
    private final PostRepository postRepository;
    private final AuthorRepository authorRepository;
    private final FollowRepository followRepository;
+
+   @Autowired
+   public PostService(PostRepository postRepository, AuthorRepository authorRepository,
+         FollowRepository followRepository)
+   {
+      this.postRepository = postRepository;
+      this.authorRepository = authorRepository;
+      this.followRepository = followRepository;
+   }
 
    public Set<Post> getMyPosts( Author author) {
       return  postRepository.findPostsByAuthor(author);

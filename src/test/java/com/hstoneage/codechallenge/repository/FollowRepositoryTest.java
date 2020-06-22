@@ -4,6 +4,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +49,7 @@ class FollowRepositoryTest
 
       Follower follower = new Follower();
       follower.setItIsMe(alice);
-      follower.setFollowing( new HashSet<>(Arrays.asList(bob,itisme) ));
+      follower.setFollowing(Stream.of(bob,itisme).collect(Collectors.toSet()));
 
       entityManager.persist(follower);
       entityManager.flush();
