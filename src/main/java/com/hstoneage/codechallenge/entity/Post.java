@@ -3,6 +3,8 @@ package com.hstoneage.codechallenge.entity;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
@@ -19,6 +21,7 @@ import lombok.Setter;
 public class Post implements FollowedPost{
 
    @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
    public Long id;
 
    @ManyToOne

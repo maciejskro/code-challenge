@@ -25,15 +25,16 @@ public class PostRepositoryTest
 
 
    @Test public void findPostsByAuthor()  {
-      this.givenAuthor = new Author(1L, "first test name","last name" );
+      this.givenAuthor = new Author();
+      givenAuthor.setFirstName("maciek");
+      givenAuthor.setLastName("skro");
+      givenAuthor.setNickName("maciejskro");
       entityManager.persist(givenAuthor);
       entityManager.flush();
 
 
       Post post1 = new Post( givenAuthor, "test message");
       Post post2 = new Post( givenAuthor, "second message");
-      post1.setId(1L);
-      post2.setId(2L);
       entityManager.persist(post1);
       entityManager.persist(post2);
       entityManager.flush();
@@ -44,9 +45,5 @@ public class PostRepositoryTest
       assertThat( found ).extracting("author").contains(givenAuthor);
    }
 
-   @Test
-   public void  canSaveMorePostAsUser() {
 
-
-   }
 }

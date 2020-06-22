@@ -3,12 +3,12 @@ package com.hstoneage.codechallenge.entity;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
-import org.springframework.lang.NonNull;
+import javax.validation.constraints.NotNull;
 
 import lombok.Data;
 import lombok.Getter;
@@ -21,12 +21,13 @@ import lombok.Setter;
 public class Author implements FollowAuthors {
 
    @Id
-   @NonNull
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
    public Long id;
-   @NonNull
+   @NotNull
    public String firstName;
-   @NonNull
+   @NotNull
    public String lastName;
+   @NotNull
    public String nickName;
    public String password;
    public String email;
