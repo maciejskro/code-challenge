@@ -13,7 +13,6 @@ import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.builders.ResponseMessageBuilder;
 import springfox.documentation.schema.ModelRef;
 import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.ResponseMessage;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -33,12 +32,12 @@ public class SwaggerConfig {
             .select()
             .apis(RequestHandlerSelectors.any())
             .paths(PathSelectors.any())
-            .build();
-/*            .globalResponseMessage(
+            .build()
+            .globalResponseMessage(
                   RequestMethod.GET, Arrays.asList(
                         new ResponseMessageBuilder().code(500).message("error 500 message").responseModel(new ModelRef("Error")).build()
                   )
-            );*/
+            );
    }
 
    private ApiInfo getApiInfo()

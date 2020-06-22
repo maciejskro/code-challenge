@@ -1,4 +1,4 @@
-package com.hstoneage.codechallenge.entity;
+package com.hstoneage.codechallenge.dto;
 
 import lombok.Data;
 

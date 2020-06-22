@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.hstoneage.codechallenge.entity.Author;
-import com.hstoneage.codechallenge.entity.FollowAuthors;
 import com.hstoneage.codechallenge.entity.Follower;
 import com.hstoneage.codechallenge.repository.AuthorRepository;
 import com.hstoneage.codechallenge.repository.FollowRepository;

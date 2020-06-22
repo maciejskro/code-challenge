@@ -9,20 +9,17 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hstoneage.codechallenge.entity.AuthBody;
+import com.hstoneage.codechallenge.dto.AuthBody;
 import com.hstoneage.codechallenge.entity.Author;
 import com.hstoneage.codechallenge.entity.FollowAuthors;
-import com.hstoneage.codechallenge.entity.Follower;
 import com.hstoneage.codechallenge.service.FollowService;
 import com.hstoneage.codechallenge.service.UserSecurityService;
 
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

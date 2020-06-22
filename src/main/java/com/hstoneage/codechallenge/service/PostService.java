@@ -2,7 +2,6 @@ package com.hstoneage.codechallenge.service;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
-import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -15,7 +14,6 @@ import com.hstoneage.codechallenge.entity.Post;
 import com.hstoneage.codechallenge.repository.AuthorRepository;
 import com.hstoneage.codechallenge.repository.FollowRepository;
 import com.hstoneage.codechallenge.repository.PostRepository;
-import com.hstoneage.codechallenge.entity.Author;
 
 import lombok.RequiredArgsConstructor;
 
