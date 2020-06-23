@@ -25,7 +25,6 @@ public class UserSecurityService implements UserDetailsService {
 
    private AuthorRepository authorRepository;
 
-
    @Override public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
    {
       Optional<Author> author = authorRepository.findAuthorByNickName(username);
